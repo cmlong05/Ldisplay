@@ -23,8 +23,10 @@ STB_ARR = [581,582]
 # 获取当前脚本的目录
 current_script_path = os.path.abspath(__file__)
 current_directory = os.path.dirname(current_script_path)
+file_to_open = "dict.json"
+file_path = os.path.join(current_directory, file_to_open)
 
-with open(current_directory/"dict.json", "r") as f:
+with open(file_path, "r") as f:
   dict = json.load(f)
 
 ###############################
