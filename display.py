@@ -4,6 +4,7 @@
 from main import *
 import time
 import json
+import os
 # import schedule
 
 # 四角参数 左上角逆时针表示
@@ -19,7 +20,11 @@ CLK = 585
 STB_ARR = [581,582]
 
 # 导入字典
-with open("dict.json", "r") as f:
+# 获取当前脚本的目录
+current_script_path = os.path.abspath(__file__)
+current_directory = os.path.dirname(current_script_path)
+
+with open(current_directory/"dict.json", "r") as f:
   dict = json.load(f)
 
 ###############################
