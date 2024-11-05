@@ -95,7 +95,7 @@ def showtext (STB_arr,dio,clk,startaddr,Dict,Text,mark=0,seconds=3):
 def displaytime(STB_arr,dio,clk,startaddr,dict,mark = 0b1000):
     # 显示时间
     current_time = datetime.datetime.now()
-    formatted_time = current_time.strftime("%H:%M")
+    formatted_time = current_time.strftime("%-I:%M")
     current_date = datetime.date.today()
     formatted_date = current_date.strftime("%m/%d")
     weekday = current_date.weekday()
