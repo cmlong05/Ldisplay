@@ -95,17 +95,18 @@ def showtext (STB_arr,dio,clk,startaddr,Dict,Text,mark=0,seconds=3):
 def displaytime(STB_arr,dio,clk,startaddr,dict,mark = 0b1000):
     # 显示时间
     current_time = datetime.datetime.now()
-    formatted_time = current_time.strftime("%H:%M")
-    formatted_time1 = current_time.strftime("%H %M")
+    formatted_time = current_time.strftime("%H : %M")
+    formatted_time1 = current_time.strftime("%H   %M")
     current_date = datetime.date.today()
     formatted_date = current_date.strftime("%m/%d")
     weekday = current_date.weekday()
     weekdays = ["周  一", "周  二", "周  三", "周  四", "周  五", "周  六", "周  日"]
-    for i in range(3):
+    
+    for i in range(6):
         showtext(STB_arr,dio,clk,startaddr,dict,formatted_time,mark)
-        time.sleep(1)
+        time.sleep(0.5)
         showtext(STB_arr,dio,clk,startaddr,dict,formatted_time1,mark)
-        time.sleep(1)
+        time.sleep(0.5)
     showtext(STB_arr,dio,clk,startaddr,dict,formatted_date,0)
     time.sleep(2)
     showtext(STB_arr,dio,clk,startaddr,dict,weekdays[weekday],0)
